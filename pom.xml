@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.jep8566</groupId>
+	<artifactId>sho-ryu-ken</artifactId>
+	<version>1.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>Parent</name>
+	<properties>
+		<argLine>-Dfile.encoding=UTF-8</argLine>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<version.spring>6.0.8</version.spring>
+		<version.spring-cloud>4.0.2</version.spring-cloud>
+	</properties>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.10.1</version>
+				<configuration>
+					<source>21</source>
+					<target>21</target>
+					<compilerVersion>21</compilerVersion>
+					<encoding>UTF-8</encoding>
+					<compilerArgument>-Xlint:deprecation</compilerArgument>
+					<!-- <compilerArguments>
+						<extdirs>${pom.basedir}/src/main/lib</extdirs>
+					</compilerArguments> -->
+					<compilerArgs>
+						<compilerArg>
+							-parameters
+						</compilerArg>
+                    </compilerArgs>
+				</configuration>
+				<dependencies>
+					<dependency>
+						<groupId>org.codehaus.plexus</groupId>
+						<artifactId>plexus-compiler-javac</artifactId>
+						<version>2.11.1</version>
+					</dependency>
+				</dependencies>
+			</plugin>
+		</plugins>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+			</resource>
+		</resources>
+	</build>
+	<repositories>
+		<repository>
+            <id>mq</id><!--如果服务端是非匿名的，一定要和settings.xml中的serverId相对应-->
+            <name>My Nexus</name>
+            <url>https://nexus.maqiang777.com/repository/maven-releases/</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+		<repository>
+			<id>aliyun</id>
+			<url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>spring-milestones</id>
+			<name>Spring Milestones</name>
+			<url>https://repo.spring.io/libs-milestone</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+	<profiles>
+		<profile>
+			<id>dev</id>
+			<properties>
+				<env>dev</env>
+				<server.port>12081</server.port>
+				<eureka.addr>47.93.89.0:8761</eureka.addr>
+				<access-control-allow-origin>http://127.0.0.1:9527</access-control-allow-origin>
+				<spring.datasource.url>47.93.89.0:3306/ducati</spring.datasource.url>
+				<spring.datasource.username>admin</spring.datasource.username>
+				<spring.datasource.password>nimda</spring.datasource.password>
+				<spring.datasource.url.slave>47.93.89.0:3306/ducati</spring.datasource.url.slave>
+				<spring.datasource.username.slave>finder</spring.datasource.username.slave>
+				<spring.datasource.password.slave>rednif</spring.datasource.password.slave>
+				<spring.datasource.sharding.0.master>47.93.89.0:3306/honda0</spring.datasource.sharding.0.master>
+				<spring.datasource.sharding.0.slave>47.93.89.0:3306/honda0</spring.datasource.sharding.0.slave>
+				<spring.datasource.sharding.1.master>47.93.89.0:3306/honda1</spring.datasource.sharding.1.master>
+				<spring.datasource.sharding.1.slave>47.93.89.0:3306/honda1</spring.datasource.sharding.1.slave>
+				<spring.datasource.sharding.2.master>47.93.89.0:3306/honda2</spring.datasource.sharding.2.master>
+				<spring.datasource.sharding.2.slave>47.93.89.0:3306/honda2</spring.datasource.sharding.2.slave>
+				<spring.datasource.sharding.3.master>47.93.89.0:3306/honda3</spring.datasource.sharding.3.master>
+				<spring.datasource.sharding.3.slave>47.93.89.0:3306/honda3</spring.datasource.sharding.3.slave>
+				<spring.datasource.sharding.4.master>47.93.89.0:3306/honda4</spring.datasource.sharding.4.master>
+				<spring.datasource.sharding.4.slave>47.93.89.0:3306/honda4</spring.datasource.sharding.4.slave>
+				<spring.datasource.sharding.5.master>47.93.89.0:3306/honda5</spring.datasource.sharding.5.master>
+				<spring.datasource.sharding.5.slave>47.93.89.0:3306/honda5</spring.datasource.sharding.5.slave>
+				<spring.datasource.sharding.6.master>47.93.89.0:3306/honda6</spring.datasource.sharding.6.master>
+				<spring.datasource.sharding.6.slave>47.93.89.0:3306/honda6</spring.datasource.sharding.6.slave>
+				<spring.datasource.sharding.7.master>47.93.89.0:3306/honda7</spring.datasource.sharding.7.master>
+				<spring.datasource.sharding.7.slave>47.93.89.0:3306/honda7</spring.datasource.sharding.7.slave>
+				<!-- <spring.rocketmq.nameServer>172.16.80.32:9876</spring.rocketmq.nameServer> -->
+				<spring.jpa.show-sql>true</spring.jpa.show-sql>
+				<expire.session>13</expire.session><!-- minutes -->
+				<expire.vcode>1</expire.vcode><!-- minutes -->
+				<!-- <redis.nodes>47.93.89.0:6379,47.93.89.0:6389,47.93.89.0:6399</redis.nodes> -->
+				<!-- redis.nodes>47.93.89.0:26379,47.93.89.0:26389,47.93.89.0:26399</redis.nodes-->
+				<redis.nodes>47.93.89.0:6379</redis.nodes>
+				<redis.pwd>foobared</redis.pwd>
+				<redis.host>47.93.89.0</redis.host>
+				<auth.center>http://127.0.0.1:12081</auth.center>
+				<mail.user>mq7253180@126.com</mail.user>
+				<mail.to>mq7253181@126.com</mail.to>
+				<zk.url>47.93.89.0:2181,47.93.89.0:2182,47.93.89.0:2183</zk.url>
+				<zk.timeout>5000</zk.timeout>
+				<kafka.url>47.93.89.0:9092</kafka.url>
+				<dubbo.protocol.port>20880</dubbo.protocol.port>
+				<nexus.url>172.16.80.38:8082</nexus.url>
+				<cfca.platid>8949665AA3D9699DE05311016B0A2A11</cfca.platid>
+				<cfca.addr>210.74.42.33:9443</cfca.addr>
+				<cfca.jks.location>/Users/maqiang/secret/anxinsign.jks</cfca.jks.location>
+				<cfca.sealid>8BA4765BB92A202FE05312016B0AB766</cfca.sealid>
+				<location.accounts>D:/ducati/tmp</location.accounts>
+			</properties>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+		</profile>
+		<profile>
+			<id>pro</id>
+			<properties>
+				<env>pro</env>
+				<server.port>12080</server.port>
+				<eureka.addr>localhost:8761</eureka.addr>
+				<access-control-allow-origin>https://demo.jep8566.com</access-control-allow-origin>
+				<spring.datasource.url>localhost:3306/ducati</spring.datasource.url>
+				<spring.datasource.username>admin</spring.datasource.username>
+				<spring.datasource.password>nimda</spring.datasource.password>
+				<!-- HAProxy负载 -->
+				<!-- <spring.datasource.url.slave>192.168.0.1:6603/ducati</spring.datasource.url.slave> -->
+				<!-- Keepalived负载 -->
+				<spring.datasource.url.slave>localhost:3306/ducati</spring.datasource.url.slave>
+				<spring.datasource.username.slave>finder</spring.datasource.username.slave>
+				<spring.datasource.password.slave>rednif</spring.datasource.password.slave>
+				<spring.datasource.sharding.0.master>localhost:3306/honda0</spring.datasource.sharding.0.master>
+				<spring.datasource.sharding.0.slave>localhost:3306/honda0</spring.datasource.sharding.0.slave>
+				<spring.datasource.sharding.1.master>localhost:3306/honda1</spring.datasource.sharding.1.master>
+				<spring.datasource.sharding.1.slave>localhost:3306/honda1</spring.datasource.sharding.1.slave>
+				<spring.datasource.sharding.2.master>localhost:3306/honda2</spring.datasource.sharding.2.master>
+				<spring.datasource.sharding.2.slave>localhost:3306/honda2</spring.datasource.sharding.2.slave>
+				<spring.datasource.sharding.3.master>localhost:3306/honda3</spring.datasource.sharding.3.master>
+				<spring.datasource.sharding.3.slave>localhost:3306/honda3</spring.datasource.sharding.3.slave>
+				<spring.datasource.sharding.4.master>localhost:3306/honda4</spring.datasource.sharding.4.master>
+				<spring.datasource.sharding.4.slave>localhost:3306/honda4</spring.datasource.sharding.4.slave>
+				<spring.datasource.sharding.5.master>localhost:3306/honda5</spring.datasource.sharding.5.master>
+				<spring.datasource.sharding.5.slave>localhost:3306/honda5</spring.datasource.sharding.5.slave>
+				<spring.datasource.sharding.6.master>localhost:3306/honda6</spring.datasource.sharding.6.master>
+				<spring.datasource.sharding.6.slave>localhost:3306/honda6</spring.datasource.sharding.6.slave>
+				<spring.datasource.sharding.7.master>localhost:3306/honda7</spring.datasource.sharding.7.master>
+				<spring.datasource.sharding.7.slave>localhost:3306/honda7</spring.datasource.sharding.7.slave>
+				<!-- <spring.rocketmq.nameServer>10.30.1.11:9876</spring.rocketmq.nameServer> -->
+				<spring.jpa.show-sql>false</spring.jpa.show-sql>
+				<expire.session>60</expire.session><!-- minutes -->
+				<expire.vcode>3</expire.vcode><!-- minutes -->
+				<redis.nodes>localhost:6379</redis.nodes>
+				<!-- <redis.nodes>localhost:26379,localhost:26389,localhost:26399</redis.nodes> -->
+				<redis.pwd>foobared</redis.pwd>
+				<redis.host>localhost</redis.host>
+				<auth.center>https://jep8566.com</auth.center>
+				<mail.user>mq7253180@126.com</mail.user>
+				<mail.to></mail.to>
+				<zk.url>localhost:2181,localhost:2182,localhost:2183</zk.url>
+				<zk.timeout>5000</zk.timeout>
+				<kafka.url>localhost:9092</kafka.url>
+				<dubbo.protocol.port>20890</dubbo.protocol.port>
+				<nexus.url>172.16.80.38:8082</nexus.url>
+				<cfca.platid>8F09B7F146D84B75E053025B210A1949</cfca.platid>
+				<cfca.addr>cs.anxinsign.com</cfca.addr>
+				<cfca.jks.location>/quincy/secret/anxinsign.jks</cfca.jks.location>
+				<cfca.sealid>95394B7F3279445BE053025B210AE261</cfca.sealid>
+				<location.accounts></location.accounts>
+			</properties>
+		</profile>
+		<profile>
+			<id>pro2</id>
+			<properties>
+				<env>pro</env>
+				<server.port>12080</server.port>
+				<eureka.addr>192.168.2.13:8761</eureka.addr>
+				<access-control-allow-origin>https://demo.jep8566.com</access-control-allow-origin>
+				<spring.datasource.url>localhost:3306/ducati</spring.datasource.url>
+				<spring.datasource.username>admin</spring.datasource.username>
+				<spring.datasource.password>nimda</spring.datasource.password>
+				<!-- HAProxy负载 -->
+				<!-- <spring.datasource.url.slave>192.168.0.1:6603/ducati</spring.datasource.url.slave> -->
+				<!-- Keepalived负载 -->
+				<spring.datasource.url.slave>localhost:3306/ducati</spring.datasource.url.slave>
+				<spring.datasource.username.slave>finder</spring.datasource.username.slave>
+				<spring.datasource.password.slave>rednif</spring.datasource.password.slave>
+				<spring.datasource.sharding.0.master>192.168.0.4:3306/honda0</spring.datasource.sharding.0.master>
+				<spring.datasource.sharding.0.slave>192.168.0.4:3306/honda0</spring.datasource.sharding.0.slave>
+				<spring.datasource.sharding.1.master>192.168.0.4:3306/honda1</spring.datasource.sharding.1.master>
+				<spring.datasource.sharding.1.slave>192.168.0.4:3306/honda1</spring.datasource.sharding.1.slave>
+				<spring.datasource.sharding.2.master>192.168.0.4:3306/honda2</spring.datasource.sharding.2.master>
+				<spring.datasource.sharding.2.slave>192.168.0.4:3306/honda2</spring.datasource.sharding.2.slave>
+				<spring.datasource.sharding.3.master>192.168.0.4:3306/honda3</spring.datasource.sharding.3.master>
+				<spring.datasource.sharding.3.slave>192.168.0.4:3306/honda3</spring.datasource.sharding.3.slave>
+				<spring.datasource.sharding.4.master>192.168.0.4:3306/honda4</spring.datasource.sharding.4.master>
+				<spring.datasource.sharding.4.slave>192.168.0.4:3306/honda4</spring.datasource.sharding.4.slave>
+				<spring.datasource.sharding.5.master>192.168.0.4:3306/honda5</spring.datasource.sharding.5.master>
+				<spring.datasource.sharding.5.slave>192.168.0.4:3306/honda5</spring.datasource.sharding.5.slave>
+				<spring.datasource.sharding.6.master>192.168.0.4:3306/honda6</spring.datasource.sharding.6.master>
+				<spring.datasource.sharding.6.slave>192.168.0.4:3306/honda6</spring.datasource.sharding.6.slave>
+				<spring.datasource.sharding.7.master>192.168.0.4:3306/honda7</spring.datasource.sharding.7.master>
+				<spring.datasource.sharding.7.slave>192.168.0.4:3306/honda7</spring.datasource.sharding.7.slave>
+				<!-- <spring.rocketmq.nameServer>10.30.1.11:9876</spring.rocketmq.nameServer> -->
+				<spring.jpa.show-sql>false</spring.jpa.show-sql>
+				<expire.session>60</expire.session><!-- minutes -->
+				<expire.vcode>3</expire.vcode><!-- minutes -->
+				<redis.nodes>localhost:6379</redis.nodes>
+				<!-- <redis.nodes>localhost:26379,localhost:26389,localhost:26399</redis.nodes> -->
+				<redis.pwd>foobared</redis.pwd>
+				<redis.host>192.168.2.13</redis.host>
+				<auth.center>https://jep8566.com</auth.center>
+				<mail.user>mq7253180@126.com</mail.user>
+				<mail.to></mail.to>
+				<zk.url>localhost:2181,localhost:2182,localhost:2183</zk.url>
+				<zk.timeout>5000</zk.timeout>
+				<kafka.url>localhost:9092</kafka.url>
+				<dubbo.protocol.port>20890</dubbo.protocol.port>
+				<nexus.url>172.16.80.38:8082</nexus.url>
+				<cfca.platid>8F09B7F146D84B75E053025B210A1949</cfca.platid>
+				<cfca.addr>cs.anxinsign.com</cfca.addr>
+				<cfca.jks.location>/quincy/secret/anxinsign.jks</cfca.jks.location>
+				<cfca.sealid>95394B7F3279445BE053025B210AE261</cfca.sealid>
+				<location.accounts></location.accounts>
+			</properties>
+		</profile>
+	</profiles>
+	<modules>
+		<module>common</module>
+		<module>master-o</module>
+		<module>master-client</module>
+		<module>master-service</module>
+		<module>www-springboot</module>
+	</modules>
+</project>
