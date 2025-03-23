@@ -2,14 +2,60 @@
 <project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.jep8566</groupId>
 	<artifactId>common</artifactId>
+	<version>1.0-SNAPSHOT</version>
 	<name>Common</name>
 	<url>http://maven.apache.org</url>
-	<parent>
-		<groupId>com.jep8566</groupId>
-		<artifactId>sho-ryu-ken</artifactId>
-		<version>1.0-SNAPSHOT</version>
-	</parent>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.10.1</version>
+				<configuration>
+					<source>21</source>
+					<target>21</target>
+					<compilerVersion>21</compilerVersion>
+					<encoding>UTF-8</encoding>
+					<compilerArgument>-Xlint:deprecation</compilerArgument>
+					<!-- <compilerArguments>
+						<extdirs>${pom.basedir}/src/main/lib</extdirs>
+					</compilerArguments> -->
+					<compilerArgs>
+						<compilerArg>
+							-parameters
+						</compilerArg>
+                    </compilerArgs>
+				</configuration>
+				<dependencies>
+					<dependency>
+						<groupId>org.codehaus.plexus</groupId>
+						<artifactId>plexus-compiler-javac</artifactId>
+						<version>2.11.1</version>
+					</dependency>
+				</dependencies>
+			</plugin>
+		</plugins>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+			</resource>
+		</resources>
+	</build>
+	<distributionManagement>
+		<repository>
+			<id>2526661-snapshot-Dx0RHl</id>
+			<url>https://packages.aliyun.com/67dd0bdc171fc8e8d8c523b7/maven/2526661-snapshot-dx0rhl</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+	</distributionManagement>
 	<dependencies>
 		<dependency>
 		    <groupId>com.quincy</groupId>
