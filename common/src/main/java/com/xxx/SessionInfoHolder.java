@@ -14,4 +14,12 @@ public class SessionInfoHolder {
 	public static Merchant getMerchant() {
 		return MERCHANT_HOLDER.get();
 	}
+
+	public static void setUser(User user) {
+		USER_HOLDER.set(user);
+	}
+
+	public static void setMerchant(Merchant merchant) {
+		MERCHANT_HOLDER.set(merchant);
+	}
 }
