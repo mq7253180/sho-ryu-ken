@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>merchant-master-controller</artifactId>
+	<name>Master Controller for Merchant</name>
+	<url>http://maven.apache.org</url>
+	<parent>
+		<groupId>com.jep8566</groupId>
+		<artifactId>sho-ryu-ken</artifactId>
+		<version>1.0-SNAPSHOT</version>
+	</parent>
+	<dependencies>
+		<dependency>
+		    <groupId>com.jep8566</groupId>
+		    <artifactId>master-service</artifactId>
+		    <version>1.0-SNAPSHOT</version>
+		</dependency>
+	</dependencies>
+</project>

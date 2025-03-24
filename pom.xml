@@ -251,6 +251,8 @@
 		<module>master-o</module>
 		<module>master-client</module>
 		<module>master-service</module>
+		<module>merchant-master-controller</module>
+		<module>wechat-master-controller</module>
 		<module>www-springboot</module>
 	</modules>
 </project>
