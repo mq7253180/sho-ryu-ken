@@ -83,53 +83,46 @@
 			<id>dev</id>
 			<properties>
 				<env>dev</env>
-				<server.port>12081</server.port>
-				<eureka.addr>47.93.89.0:8761</eureka.addr>
-				<access-control-allow-origin>http://127.0.0.1:9527</access-control-allow-origin>
-				<spring.datasource.url>47.93.89.0:3306/ducati</spring.datasource.url>
-				<spring.datasource.username>admin</spring.datasource.username>
-				<spring.datasource.password>nimda</spring.datasource.password>
-				<spring.datasource.url.slave>47.93.89.0:3306/ducati</spring.datasource.url.slave>
-				<spring.datasource.username.slave>finder</spring.datasource.username.slave>
-				<spring.datasource.password.slave>rednif</spring.datasource.password.slave>
-				<spring.datasource.sharding.0.master>47.93.89.0:3306/honda0</spring.datasource.sharding.0.master>
-				<spring.datasource.sharding.0.slave>47.93.89.0:3306/honda0</spring.datasource.sharding.0.slave>
-				<spring.datasource.sharding.1.master>47.93.89.0:3306/honda1</spring.datasource.sharding.1.master>
-				<spring.datasource.sharding.1.slave>47.93.89.0:3306/honda1</spring.datasource.sharding.1.slave>
-				<spring.datasource.sharding.2.master>47.93.89.0:3306/honda2</spring.datasource.sharding.2.master>
-				<spring.datasource.sharding.2.slave>47.93.89.0:3306/honda2</spring.datasource.sharding.2.slave>
-				<spring.datasource.sharding.3.master>47.93.89.0:3306/honda3</spring.datasource.sharding.3.master>
-				<spring.datasource.sharding.3.slave>47.93.89.0:3306/honda3</spring.datasource.sharding.3.slave>
-				<spring.datasource.sharding.4.master>47.93.89.0:3306/honda4</spring.datasource.sharding.4.master>
-				<spring.datasource.sharding.4.slave>47.93.89.0:3306/honda4</spring.datasource.sharding.4.slave>
-				<spring.datasource.sharding.5.master>47.93.89.0:3306/honda5</spring.datasource.sharding.5.master>
-				<spring.datasource.sharding.5.slave>47.93.89.0:3306/honda5</spring.datasource.sharding.5.slave>
-				<spring.datasource.sharding.6.master>47.93.89.0:3306/honda6</spring.datasource.sharding.6.master>
-				<spring.datasource.sharding.6.slave>47.93.89.0:3306/honda6</spring.datasource.sharding.6.slave>
-				<spring.datasource.sharding.7.master>47.93.89.0:3306/honda7</spring.datasource.sharding.7.master>
-				<spring.datasource.sharding.7.slave>47.93.89.0:3306/honda7</spring.datasource.sharding.7.slave>
-				<!-- <spring.rocketmq.nameServer>172.16.80.32:9876</spring.rocketmq.nameServer> -->
-				<spring.jpa.show-sql>true</spring.jpa.show-sql>
-				<expire.session>13</expire.session><!-- minutes -->
-				<expire.vcode>1</expire.vcode><!-- minutes -->
-				<!-- <redis.nodes>47.93.89.0:6379,47.93.89.0:6389,47.93.89.0:6399</redis.nodes> -->
-				<!-- redis.nodes>47.93.89.0:26379,47.93.89.0:26389,47.93.89.0:26399</redis.nodes-->
-				<redis.nodes>47.93.89.0:6379</redis.nodes>
-				<redis.pwd>foobared</redis.pwd>
-				<redis.host>47.93.89.0</redis.host>
-				<auth.center>http://127.0.0.1:12081</auth.center>
-				<mail.user>mq7253180@126.com</mail.user>
-				<mail.to>mq7253181@126.com</mail.to>
-				<zk.url>47.93.89.0:2181,47.93.89.0:2182,47.93.89.0:2183</zk.url>
-				<zk.timeout>5000</zk.timeout>
-				<kafka.url>47.93.89.0:9092</kafka.url>
-				<dubbo.protocol.port>20880</dubbo.protocol.port>
-				<nexus.url>172.16.80.38:8082</nexus.url>
-				<cfca.platid>8949665AA3D9699DE05311016B0A2A11</cfca.platid>
-				<cfca.addr>210.74.42.33:9443</cfca.addr>
-				<cfca.jks.location>/Users/maqiang/secret/anxinsign.jks</cfca.jks.location>
-				<cfca.sealid>8BA4765BB92A202FE05312016B0AB766</cfca.sealid>
-				<location.accounts>D:/ducati/tmp</location.accounts>
+				<access-control-allow-origin>http://merchant.chanchanmao.com</access-control-allow-origin>
+				<auth.center>http://merchant.chanchanmao.com/index.html</auth.center>
+				<spring.pid.file>/Users/maqiang/tmp/ccm.pid</spring.pid.file>
+				<redis.nodes>redis.chanchanmao.com:6379</redis.nodes>
+				<spring.data.redis.host>redis.chanchanmao.com</spring.data.redis.host>
+				<!--<redis.nodes>r-2zezo1yk5sgy64e97zpd.redis.rds.aliyuncs.com:6379</redis.nodes>
+				<spring.data.redis.host>r-2zezo1yk5sgy64e97zpd.redis.rds.aliyuncs.com</spring.data.redis.host>-->
+				<spring.datasource.sharding.0.master>rm-2zeiznwv4301fif04yo.mysql.rds.aliyuncs.com:3306/chanchanmao0</spring.datasource.sharding.0.master>
+				<spring.datasource.sharding.0.slave>rm-2zeiznwv4301fif04yo.mysql.rds.aliyuncs.com:3306/chanchanmao0</spring.datasource.sharding.0.slave>
+				<spring.datasource.sharding.1.master>rm-2zeiznwv4301fif04yo.mysql.rds.aliyuncs.com:3306/chanchanmao1</spring.datasource.sharding.1.master>
+				<spring.datasource.sharding.1.slave>rm-2zeiznwv4301fif04yo.mysql.rds.aliyuncs.com:3306/chanchanmao1</spring.datasource.sharding.1.slave>
+				<spring.datasource.sharding.2.master>rm-2zeiznwv4301fif04yo.mysql.rds.aliyuncs.com:3306/chanchanmao2</spring.datasource.sharding.2.master>
+				<spring.datasource.sharding.2.slave>rm-2zeiznwv4301fif04yo.mysql.rds.aliyuncs.com:3306/chanchanmao2</spring.datasource.sharding.2.slave>
+				<spring.datasource.sharding.3.master>rm-2zeiznwv4301fif04yo.mysql.rds.aliyuncs.com:3306/chanchanmao3</spring.datasource.sharding.3.master>
+				<spring.datasource.sharding.3.slave>rm-2zeiznwv4301fif04yo.mysql.rds.aliyuncs.com:3306/chanchanmao3</spring.datasource.sharding.3.slave>
+				<spring.datasource.sharding.4.master>rm-2zeiznwv4301fif04yo.mysql.rds.aliyuncs.com:3306/chanchanmao4</spring.datasource.sharding.4.master>
+				<spring.datasource.sharding.4.slave>rm-2zeiznwv4301fif04yo.mysql.rds.aliyuncs.com:3306/chanchanmao4</spring.datasource.sharding.4.slave>
+				<spring.datasource.sharding.5.master>rm-2zeiznwv4301fif04yo.mysql.rds.aliyuncs.com:3306/chanchanmao5</spring.datasource.sharding.5.master>
+				<spring.datasource.sharding.5.slave>rm-2zeiznwv4301fif04yo.mysql.rds.aliyuncs.com:3306/chanchanmao5</spring.datasource.sharding.5.slave>
+				<spring.datasource.sharding.6.master>rm-2zeiznwv4301fif04yo.mysql.rds.aliyuncs.com:3306/chanchanmao6</spring.datasource.sharding.6.master>
+				<spring.datasource.sharding.6.slave>rm-2zeiznwv4301fif04yo.mysql.rds.aliyuncs.com:3306/chanchanmao6</spring.datasource.sharding.6.slave>
+				<spring.datasource.sharding.7.master>rm-2zeiznwv4301fif04yo.mysql.rds.aliyuncs.com:3306/chanchanmao7</spring.datasource.sharding.7.master>
+				<spring.datasource.sharding.7.slave>rm-2zeiznwv4301fif04yo.mysql.rds.aliyuncs.com:3306/chanchanmao7</spring.datasource.sharding.7.slave>
+				<spring.datasource.sharding.8.master>rm-2zeiznwv4301fif04yo.mysql.rds.aliyuncs.com:3306/chanchanmao8</spring.datasource.sharding.8.master>
+				<spring.datasource.sharding.8.slave>rm-2zeiznwv4301fif04yo.mysql.rds.aliyuncs.com:3306/chanchanmao8</spring.datasource.sharding.8.slave>
+				<spring.datasource.sharding.9.master>rm-2zeiznwv4301fif04yo.mysql.rds.aliyuncs.com:3306/chanchanmao9</spring.datasource.sharding.9.master>
+				<spring.datasource.sharding.9.slave>rm-2zeiznwv4301fif04yo.mysql.rds.aliyuncs.com:3306/chanchanmao9</spring.datasource.sharding.9.slave>
+				<spring.datasource.sharding.10.master>rm-2zeiznwv4301fif04yo.mysql.rds.aliyuncs.com:3306/chanchanmao10</spring.datasource.sharding.10.master>
+				<spring.datasource.sharding.10.slave>rm-2zeiznwv4301fif04yo.mysql.rds.aliyuncs.com:3306/chanchanmao10</spring.datasource.sharding.10.slave>
+				<spring.datasource.sharding.11.master>rm-2zeiznwv4301fif04yo.mysql.rds.aliyuncs.com:3306/chanchanmao11</spring.datasource.sharding.11.master>
+				<spring.datasource.sharding.11.slave>rm-2zeiznwv4301fif04yo.mysql.rds.aliyuncs.com:3306/chanchanmao11</spring.datasource.sharding.11.slave>
+				<spring.datasource.sharding.12.master>rm-2zeiznwv4301fif04yo.mysql.rds.aliyuncs.com:3306/chanchanmao12</spring.datasource.sharding.12.master>
+				<spring.datasource.sharding.12.slave>rm-2zeiznwv4301fif04yo.mysql.rds.aliyuncs.com:3306/chanchanmao12</spring.datasource.sharding.12.slave>
+				<spring.datasource.sharding.13.master>rm-2zeiznwv4301fif04yo.mysql.rds.aliyuncs.com:3306/chanchanmao13</spring.datasource.sharding.13.master>
+				<spring.datasource.sharding.13.slave>rm-2zeiznwv4301fif04yo.mysql.rds.aliyuncs.com:3306/chanchanmao13</spring.datasource.sharding.13.slave>
+				<spring.datasource.sharding.14.master>rm-2zeiznwv4301fif04yo.mysql.rds.aliyuncs.com:3306/chanchanmao14</spring.datasource.sharding.14.master>
+				<spring.datasource.sharding.14.slave>rm-2zeiznwv4301fif04yo.mysql.rds.aliyuncs.com:3306/chanchanmao14</spring.datasource.sharding.14.slave>
+				<spring.datasource.sharding.15.master>rm-2zeiznwv4301fif04yo.mysql.rds.aliyuncs.com:3306/chanchanmao15</spring.datasource.sharding.15.master>
+				<spring.datasource.sharding.15.slave>rm-2zeiznwv4301fif04yo.mysql.rds.aliyuncs.com:3306/chanchanmao15</spring.datasource.sharding.15.slave>
+				<server.servlet.session.timeout>60</server.servlet.session.timeout>
 			</properties>
 			<activation>
 				<activeByDefault>true</activeByDefault>
@@ -139,110 +132,44 @@
 			<id>pro</id>
 			<properties>
 				<env>pro</env>
-				<server.port>12080</server.port>
-				<eureka.addr>localhost:8761</eureka.addr>
-				<access-control-allow-origin>https://demo.jep8566.com</access-control-allow-origin>
-				<spring.datasource.url>localhost:3306/ducati</spring.datasource.url>
-				<spring.datasource.username>admin</spring.datasource.username>
-				<spring.datasource.password>nimda</spring.datasource.password>
-				<!-- HAProxy负载 -->
-				<!-- <spring.datasource.url.slave>192.168.0.1:6603/ducati</spring.datasource.url.slave> -->
-				<!-- Keepalived负载 -->
-				<spring.datasource.url.slave>localhost:3306/ducati</spring.datasource.url.slave>
-				<spring.datasource.username.slave>finder</spring.datasource.username.slave>
-				<spring.datasource.password.slave>rednif</spring.datasource.password.slave>
-				<spring.datasource.sharding.0.master>localhost:3306/honda0</spring.datasource.sharding.0.master>
-				<spring.datasource.sharding.0.slave>localhost:3306/honda0</spring.datasource.sharding.0.slave>
-				<spring.datasource.sharding.1.master>localhost:3306/honda1</spring.datasource.sharding.1.master>
-				<spring.datasource.sharding.1.slave>localhost:3306/honda1</spring.datasource.sharding.1.slave>
-				<spring.datasource.sharding.2.master>localhost:3306/honda2</spring.datasource.sharding.2.master>
-				<spring.datasource.sharding.2.slave>localhost:3306/honda2</spring.datasource.sharding.2.slave>
-				<spring.datasource.sharding.3.master>localhost:3306/honda3</spring.datasource.sharding.3.master>
-				<spring.datasource.sharding.3.slave>localhost:3306/honda3</spring.datasource.sharding.3.slave>
-				<spring.datasource.sharding.4.master>localhost:3306/honda4</spring.datasource.sharding.4.master>
-				<spring.datasource.sharding.4.slave>localhost:3306/honda4</spring.datasource.sharding.4.slave>
-				<spring.datasource.sharding.5.master>localhost:3306/honda5</spring.datasource.sharding.5.master>
-				<spring.datasource.sharding.5.slave>localhost:3306/honda5</spring.datasource.sharding.5.slave>
-				<spring.datasource.sharding.6.master>localhost:3306/honda6</spring.datasource.sharding.6.master>
-				<spring.datasource.sharding.6.slave>localhost:3306/honda6</spring.datasource.sharding.6.slave>
-				<spring.datasource.sharding.7.master>localhost:3306/honda7</spring.datasource.sharding.7.master>
-				<spring.datasource.sharding.7.slave>localhost:3306/honda7</spring.datasource.sharding.7.slave>
-				<!-- <spring.rocketmq.nameServer>10.30.1.11:9876</spring.rocketmq.nameServer> -->
-				<spring.jpa.show-sql>false</spring.jpa.show-sql>
-				<expire.session>60</expire.session><!-- minutes -->
-				<expire.vcode>3</expire.vcode><!-- minutes -->
-				<redis.nodes>localhost:6379</redis.nodes>
-				<!-- <redis.nodes>localhost:26379,localhost:26389,localhost:26399</redis.nodes> -->
-				<redis.pwd>foobared</redis.pwd>
-				<redis.host>localhost</redis.host>
-				<auth.center>https://jep8566.com</auth.center>
-				<mail.user>mq7253180@126.com</mail.user>
-				<mail.to></mail.to>
-				<zk.url>localhost:2181,localhost:2182,localhost:2183</zk.url>
-				<zk.timeout>5000</zk.timeout>
-				<kafka.url>localhost:9092</kafka.url>
-				<dubbo.protocol.port>20890</dubbo.protocol.port>
-				<nexus.url>172.16.80.38:8082</nexus.url>
-				<cfca.platid>8F09B7F146D84B75E053025B210A1949</cfca.platid>
-				<cfca.addr>cs.anxinsign.com</cfca.addr>
-				<cfca.jks.location>/quincy/secret/anxinsign.jks</cfca.jks.location>
-				<cfca.sealid>95394B7F3279445BE053025B210AE261</cfca.sealid>
-				<location.accounts></location.accounts>
-			</properties>
-		</profile>
-		<profile>
-			<id>pro2</id>
-			<properties>
-				<env>pro</env>
-				<server.port>12080</server.port>
-				<eureka.addr>192.168.2.13:8761</eureka.addr>
-				<access-control-allow-origin>https://demo.jep8566.com</access-control-allow-origin>
-				<spring.datasource.url>localhost:3306/ducati</spring.datasource.url>
-				<spring.datasource.username>admin</spring.datasource.username>
-				<spring.datasource.password>nimda</spring.datasource.password>
-				<!-- HAProxy负载 -->
-				<!-- <spring.datasource.url.slave>192.168.0.1:6603/ducati</spring.datasource.url.slave> -->
-				<!-- Keepalived负载 -->
-				<spring.datasource.url.slave>localhost:3306/ducati</spring.datasource.url.slave>
-				<spring.datasource.username.slave>finder</spring.datasource.username.slave>
-				<spring.datasource.password.slave>rednif</spring.datasource.password.slave>
-				<spring.datasource.sharding.0.master>192.168.0.4:3306/honda0</spring.datasource.sharding.0.master>
-				<spring.datasource.sharding.0.slave>192.168.0.4:3306/honda0</spring.datasource.sharding.0.slave>
-				<spring.datasource.sharding.1.master>192.168.0.4:3306/honda1</spring.datasource.sharding.1.master>
-				<spring.datasource.sharding.1.slave>192.168.0.4:3306/honda1</spring.datasource.sharding.1.slave>
-				<spring.datasource.sharding.2.master>192.168.0.4:3306/honda2</spring.datasource.sharding.2.master>
-				<spring.datasource.sharding.2.slave>192.168.0.4:3306/honda2</spring.datasource.sharding.2.slave>
-				<spring.datasource.sharding.3.master>192.168.0.4:3306/honda3</spring.datasource.sharding.3.master>
-				<spring.datasource.sharding.3.slave>192.168.0.4:3306/honda3</spring.datasource.sharding.3.slave>
-				<spring.datasource.sharding.4.master>192.168.0.4:3306/honda4</spring.datasource.sharding.4.master>
-				<spring.datasource.sharding.4.slave>192.168.0.4:3306/honda4</spring.datasource.sharding.4.slave>
-				<spring.datasource.sharding.5.master>192.168.0.4:3306/honda5</spring.datasource.sharding.5.master>
-				<spring.datasource.sharding.5.slave>192.168.0.4:3306/honda5</spring.datasource.sharding.5.slave>
-				<spring.datasource.sharding.6.master>192.168.0.4:3306/honda6</spring.datasource.sharding.6.master>
-				<spring.datasource.sharding.6.slave>192.168.0.4:3306/honda6</spring.datasource.sharding.6.slave>
-				<spring.datasource.sharding.7.master>192.168.0.4:3306/honda7</spring.datasource.sharding.7.master>
-				<spring.datasource.sharding.7.slave>192.168.0.4:3306/honda7</spring.datasource.sharding.7.slave>
-				<!-- <spring.rocketmq.nameServer>10.30.1.11:9876</spring.rocketmq.nameServer> -->
-				<spring.jpa.show-sql>false</spring.jpa.show-sql>
-				<expire.session>60</expire.session><!-- minutes -->
-				<expire.vcode>3</expire.vcode><!-- minutes -->
-				<redis.nodes>localhost:6379</redis.nodes>
-				<!-- <redis.nodes>localhost:26379,localhost:26389,localhost:26399</redis.nodes> -->
-				<redis.pwd>foobared</redis.pwd>
-				<redis.host>192.168.2.13</redis.host>
-				<auth.center>https://jep8566.com</auth.center>
-				<mail.user>mq7253180@126.com</mail.user>
-				<mail.to></mail.to>
-				<zk.url>localhost:2181,localhost:2182,localhost:2183</zk.url>
-				<zk.timeout>5000</zk.timeout>
-				<kafka.url>localhost:9092</kafka.url>
-				<dubbo.protocol.port>20890</dubbo.protocol.port>
-				<nexus.url>172.16.80.38:8082</nexus.url>
-				<cfca.platid>8F09B7F146D84B75E053025B210A1949</cfca.platid>
-				<cfca.addr>cs.anxinsign.com</cfca.addr>
-				<cfca.jks.location>/quincy/secret/anxinsign.jks</cfca.jks.location>
-				<cfca.sealid>95394B7F3279445BE053025B210AE261</cfca.sealid>
-				<location.accounts></location.accounts>
+				<access-control-allow-origin>http://merchant.chanchanmao.com</access-control-allow-origin>
+				<auth.center>http://merchant.chanchanmao.com/index.html</auth.center>
+				<spring.pid.file>/quincy/tmp/xxx.pid</spring.pid.file>
+				<redis.nodes>r-2zezo1yk5sgy64e97z.redis.rds.aliyuncs.com:6379</redis.nodes>
+				<spring.data.redis.host>r-2zezo1yk5sgy64e97z.redis.rds.aliyuncs.com</spring.data.redis.host>
+				<spring.datasource.sharding.0.master>rm-2zeiznwv4301fif04.mysql.rds.aliyuncs.com:3306/chanchanmao0</spring.datasource.sharding.0.master>
+				<spring.datasource.sharding.0.slave>rm-2zeiznwv4301fif04.mysql.rds.aliyuncs.com:3306/chanchanmao0</spring.datasource.sharding.0.slave>
+				<spring.datasource.sharding.1.master>rm-2zeiznwv4301fif04.mysql.rds.aliyuncs.com:3306/chanchanmao1</spring.datasource.sharding.1.master>
+				<spring.datasource.sharding.1.slave>rm-2zeiznwv4301fif04.mysql.rds.aliyuncs.com:3306/chanchanmao1</spring.datasource.sharding.1.slave>
+				<spring.datasource.sharding.2.master>rm-2zeiznwv4301fif04.mysql.rds.aliyuncs.com:3306/chanchanmao2</spring.datasource.sharding.2.master>
+				<spring.datasource.sharding.2.slave>rm-2zeiznwv4301fif04.mysql.rds.aliyuncs.com:3306/chanchanmao2</spring.datasource.sharding.2.slave>
+				<spring.datasource.sharding.3.master>rm-2zeiznwv4301fif04.mysql.rds.aliyuncs.com:3306/chanchanmao3</spring.datasource.sharding.3.master>
+				<spring.datasource.sharding.3.slave>rm-2zeiznwv4301fif04.mysql.rds.aliyuncs.com:3306/chanchanmao3</spring.datasource.sharding.3.slave>
+				<spring.datasource.sharding.4.master>rm-2zeiznwv4301fif04.mysql.rds.aliyuncs.com:3306/chanchanmao4</spring.datasource.sharding.4.master>
+				<spring.datasource.sharding.4.slave>rm-2zeiznwv4301fif04.mysql.rds.aliyuncs.com:3306/chanchanmao4</spring.datasource.sharding.4.slave>
+				<spring.datasource.sharding.5.master>rm-2zeiznwv4301fif04.mysql.rds.aliyuncs.com:3306/chanchanmao5</spring.datasource.sharding.5.master>
+				<spring.datasource.sharding.5.slave>rm-2zeiznwv4301fif04.mysql.rds.aliyuncs.com:3306/chanchanmao5</spring.datasource.sharding.5.slave>
+				<spring.datasource.sharding.6.master>rm-2zeiznwv4301fif04.mysql.rds.aliyuncs.com:3306/chanchanmao6</spring.datasource.sharding.6.master>
+				<spring.datasource.sharding.6.slave>rm-2zeiznwv4301fif04.mysql.rds.aliyuncs.com:3306/chanchanmao6</spring.datasource.sharding.6.slave>
+				<spring.datasource.sharding.7.master>rm-2zeiznwv4301fif04.mysql.rds.aliyuncs.com:3306/chanchanmao7</spring.datasource.sharding.7.master>
+				<spring.datasource.sharding.7.slave>rm-2zeiznwv4301fif04.mysql.rds.aliyuncs.com:3306/chanchanmao7</spring.datasource.sharding.7.slave>
+				<spring.datasource.sharding.8.master>rm-2zeiznwv4301fif04.mysql.rds.aliyuncs.com:3306/chanchanmao8</spring.datasource.sharding.8.master>
+				<spring.datasource.sharding.8.slave>rm-2zeiznwv4301fif04.mysql.rds.aliyuncs.com:3306/chanchanmao8</spring.datasource.sharding.8.slave>
+				<spring.datasource.sharding.9.master>rm-2zeiznwv4301fif04.mysql.rds.aliyuncs.com:3306/chanchanmao9</spring.datasource.sharding.9.master>
+				<spring.datasource.sharding.9.slave>rm-2zeiznwv4301fif04.mysql.rds.aliyuncs.com:3306/chanchanmao9</spring.datasource.sharding.9.slave>
+				<spring.datasource.sharding.10.master>rm-2zeiznwv4301fif04.mysql.rds.aliyuncs.com:3306/chanchanmao10</spring.datasource.sharding.10.master>
+				<spring.datasource.sharding.10.slave>rm-2zeiznwv4301fif04.mysql.rds.aliyuncs.com:3306/chanchanmao10</spring.datasource.sharding.10.slave>
+				<spring.datasource.sharding.11.master>rm-2zeiznwv4301fif04.mysql.rds.aliyuncs.com:3306/chanchanmao11</spring.datasource.sharding.11.master>
+				<spring.datasource.sharding.11.slave>rm-2zeiznwv4301fif04.mysql.rds.aliyuncs.com:3306/chanchanmao11</spring.datasource.sharding.11.slave>
+				<spring.datasource.sharding.12.master>rm-2zeiznwv4301fif04.mysql.rds.aliyuncs.com:3306/chanchanmao12</spring.datasource.sharding.12.master>
+				<spring.datasource.sharding.12.slave>rm-2zeiznwv4301fif04.mysql.rds.aliyuncs.com:3306/chanchanmao12</spring.datasource.sharding.12.slave>
+				<spring.datasource.sharding.13.master>rm-2zeiznwv4301fif04.mysql.rds.aliyuncs.com:3306/chanchanmao13</spring.datasource.sharding.13.master>
+				<spring.datasource.sharding.13.slave>rm-2zeiznwv4301fif04.mysql.rds.aliyuncs.com:3306/chanchanmao13</spring.datasource.sharding.13.slave>
+				<spring.datasource.sharding.14.master>rm-2zeiznwv4301fif04.mysql.rds.aliyuncs.com:3306/chanchanmao14</spring.datasource.sharding.14.master>
+				<spring.datasource.sharding.14.slave>rm-2zeiznwv4301fif04.mysql.rds.aliyuncs.com:3306/chanchanmao14</spring.datasource.sharding.14.slave>
+				<spring.datasource.sharding.15.master>rm-2zeiznwv4301fif04.mysql.rds.aliyuncs.com:3306/chanchanmao15</spring.datasource.sharding.15.master>
+				<spring.datasource.sharding.15.slave>rm-2zeiznwv4301fif04.mysql.rds.aliyuncs.com:3306/chanchanmao15</spring.datasource.sharding.15.slave>
+				<server.servlet.session.timeout>60</server.servlet.session.timeout>
 			</properties>
 		</profile>
 	</profiles>

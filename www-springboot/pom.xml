@@ -149,14 +149,8 @@
 		<profile>
 			<id>dev</id>
 			<properties>
-				<env>dev</env>
-				<spring.pid.file>/Users/maqiang/tmp/ducati.pid</spring.pid.file>
-				<path.log.logback>/Users/maqiang/tmp/logs/ducati</path.log.logback>
+				<path.log.logback>/Users/maqiang/tmp/logs/ccm</path.log.logback>
 				<log.level>INFO</log.level>
-				<spring.freemarker.cache>false</spring.freemarker.cache>
-				<prefix.resource>/static</prefix.resource>
-				<eureka.addr>47.93.89.0:8761</eureka.addr>
-				<eureka.instance.hostname>47.93.89.0</eureka.instance.hostname>
 			</properties>
 			<activation>
 				<activeByDefault>true</activeByDefault>
@@ -165,39 +159,12 @@
 		<profile>
 			<id>pro</id>
 			<properties>
-				<env>pro</env>
-				<spring.pid.file>/logs/ducati/ducatid.pid</spring.pid.file>
-				<path.log.logback>/logs/ducati</path.log.logback>
+				<path.log.logback>/quincy/tmp/logs/xxx</path.log.logback>
 				<log.level>WARN</log.level>
-				<spring.freemarker.cache>true</spring.freemarker.cache>
-				<prefix.resource>https://static.jep8566.com</prefix.resource>
-				<eureka.addr>localhost:8761</eureka.addr>
-				<eureka.instance.hostname>10.27.74.163</eureka.instance.hostname>
-			</properties>
-		</profile>
-		<profile>
-			<id>pro2</id>
-			<properties>
-				<env>pro</env>
-				<spring.pid.file>/logs/ducati/ducatid.pid</spring.pid.file>
-				<path.log.logback>/logs/ducati</path.log.logback>
-				<log.level>WARN</log.level>
-				<spring.freemarker.cache>true</spring.freemarker.cache>
-				<prefix.resource>https://static.jep8566.com</prefix.resource>
-				<eureka.addr>192.168.2.13:8761</eureka.addr>
-				<eureka.instance.hostname>10.27.74.163</eureka.instance.hostname>
 			</properties>
 		</profile>
 	</profiles>
 	<repositories>
-		<repository>
-            <id>mq</id><!--如果服务端是非匿名的，一定要和settings.xml中的serverId相对应-->
-            <name>My Nexus</name>
-            <url>https://nexus.maqiang777.com/repository/maven-releases/</url>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </repository>
 		<repository>
 			<id>aliyun</id>
 			<url>http://maven.aliyun.com/nexus/content/groups/public/</url>
@@ -261,7 +228,7 @@
 		    <groupId>org.springframework.boot</groupId>
 		    <artifactId>spring-boot-starter-freemarker</artifactId>
 		</dependency>
-		<dependency>
+		<!-- <dependency>
 		    <groupId>org.springframework.cloud</groupId>
 		    <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
 		    <version>4.0.1</version>
@@ -276,7 +243,7 @@
 		    <groupId>org.springframework.cloud</groupId>
 		    <artifactId>spring-cloud-starter-bootstrap</artifactId>
 		    <version>${version.spring-cloud}</version>
-		</dependency>
+		</dependency>-->
 		<dependency>
 		    <groupId>com.jep8566</groupId>
 		    <artifactId>merchant-master-controller</artifactId>
