@@ -1,6 +1,5 @@
 package com.xxx;
 
-import java.io.Serializable;
 import java.text.MessageFormat;
 import java.util.List;
 
@@ -18,6 +17,12 @@ public class MerchantControllerConfiguration {
 	@Bean
 	public AuthServerActions authActions() {
 		return new AuthServerActions() {
+			@Override
+			public Object userExt(User user) {
+				// TODO Auto-generated method stub
+				return null;
+			}
+
 			@Override
 			public void sms(String mobilePhone, String vcode, int expireMinuts) {
 				System.out.println(MessageFormat.format("已通过阿里云短信接口向{0}发送验证码: {1}, 失效时间{2}分钟", mobilePhone, new String(vcode), expireMinuts));
@@ -37,12 +42,6 @@ public class MerchantControllerConfiguration {
 
 			@Override
 			public List<Menu> findMenus(Long userId) {
-				// TODO Auto-generated method stub
-				return null;
-			}
-
-			@Override
-			public <T extends Serializable> T userExt(User user) {
 				// TODO Auto-generated method stub
 				return null;
 			}
